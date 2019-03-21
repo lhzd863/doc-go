@@ -27,7 +27,7 @@ func (m *Mail) SendMsg(tousr string, subject string, context string, attach stri
         m1 := gomail.NewMessage()
         m1.SetHeader("From", m.From)
         m1.SetHeader("To", tousr)
-        //m1.SetAddressHeader("Cc", m.From, "lhzd863")
+        m1.SetAddressHeader("Cc", m.From, "lhzd863")
         m1.SetHeader("Subject", subject)
         m1.SetBody("text/html", context)
         if len(attach) != 0 {
