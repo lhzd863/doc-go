@@ -1,3 +1,4 @@
+package mail
 import (
         "gopkg.in/gomail.v2"
         "fmt"
@@ -28,7 +29,7 @@ func (m *Mail) SendMsg(tousr string, subject string, context string, attach stri
         m1.SetHeader("To", tousr)
         //m1.SetAddressHeader("Cc", m.From, "lhzd863")
         m1.SetHeader("Subject", subject)
-        m1.SetBody("text/html", "Hello <b>Bob</b> and <i>Cora</i>!")
+        m1.SetBody("text/html", context)
         if len(attach) != 0 {
                 m1.Attach(attach)
         }
