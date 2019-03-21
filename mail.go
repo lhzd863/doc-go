@@ -33,10 +33,9 @@ func (m *Mail) SendMsg(tousr string, subject string, context string, attach stri
         if len(attach) != 0 {
                 m1.Attach(attach)
         }
-
+        
         d := gomail.NewDialer(m.Host, m.Port, m.Usr, m.Passwd)
 
-        // Send the email to Bob, Cora and Dan.
         if err := d.DialAndSend(m1); err != nil {
                 panic(err)
         }
